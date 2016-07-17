@@ -1,0 +1,24 @@
+# Appformix Policy Module for version 1.5.3 of Appformix Application
+# Author: Kaz (jose.kaz@rackspace.com
+# License: GNU/GPLv2
+
+policy_module(appformix,0.0.2)
+
+require {
+	type svirt_lxc_net_t;
+	attribute file_type;
+}
+
+
+type appformix_var_log_t, file_type;
+type appformix_mongo_t, file_type;
+type appformix_conf_t, file_type;
+
+#============= svirt_lxc_net_t ==============
+allow svirt_lxc_net_t appformix_var_log_t:dir rw_dir_perms;
+allow svirt_lxc_net_t appformix_var_log_t:file rw_file_perms;
+allow svirt_lxc_net_t appformix_mongo_t:dir rw_dir_perms;
+allow svirt_lxc_net_t appformix_mongo_t:file rw_file_perms;
+allow svirt_lxc_net_t appformix_conf_t:dir rw_dir_perms;
+allow svirt_lxc_net_t appformix_conf_t:file rw_file_perms;
+

@@ -1,0 +1,3 @@
+/var/log/appformix(/.*)? 	system_u:object_r:appformix_var_log_t:s0
+/opt/appformix/mongo(/.*)?	system_u:object_r:appformix_mongo_t:s0
+/opt/appformix/etc(/.*)?	system_u:object_r:appformix_conf_t:s0
